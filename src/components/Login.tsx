@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { account, ID } from "@/appwrite";
 import { type Models } from "appwrite";
-import GoogleLogin from "./GoogleLogin";
-import GithubLogin from "./GithubLogin";
+import GoogleLogin from "@/components/GoogleLogin";
+import GithubLogin from "@/components/GithubLogin";
+
 const LoginPage = () => {
   const [loggedInUser, setLoggedInUser] =
     useState<Models.User<Models.Preferences> | null>(null);
@@ -38,20 +39,18 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="w-[350px] flex flex-col justify-center items-center">
-      <p>Not logged in</p>
-      <h3 className="">okay</h3>
-      <form className="flex flex-col gap-y-4 border-gray-400 shadow-lg">
+    <div className="w-[350px] flex flex-col p-6  bg-primary">
+      <form className="card w-96 bg-base-100 shadow-lg ">
         <input
           type="email"
-          className=""
+          className="input input-bordered w-full max-w-xs"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
-          className="text-black"
+          className="input input-bordered w-full max-w-xs"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -59,27 +58,25 @@ const LoginPage = () => {
         <input
           type="text"
           placeholder="Name"
-          className="text-black"
+          className="input input-bordered w-full max-w-xs"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <button
           type="button"
           onClick={() => login(email, password)}
-          className="bg-white text-black"
+          className="btn-primary"
         >
           Login
         </button>
-        <button
-          type="button"
-          onClick={register}
-          className="bg-white text-black"
-        >
+        <button type="button" onClick={register} className="btn-primary">
           Register
         </button>
+      </form>
+      <div>
         <GoogleLogin />
         <GithubLogin />
-      </form>
+      </div>
     </div>
   );
 };

@@ -13,7 +13,8 @@ const GithubLogin = () => {
   return (
     <div>
       <button
-        className="bg-gray-500 px-4 py-2 rounded-md shadow-lg"
+        className="btn"
+        // className="btn bg-gray-500 px-4 py-2 rounded-md shadow-lg"
         onClick={login}
       >
         login with GITHUB

@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { account } from "@/appwrite";
-
+import { type Models } from "appwrite";
 const Dashboard = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<Models.User<Models.Preferences> | null>();
   const getAccount = async () => {
     const accountData = await account.get();
     setUser(accountData);
@@ -23,6 +23,13 @@ const Dashboard = () => {
           <p>Email: {user.email}</p>
         </div>
       )}
+      <div>
+        <div className="w-[450px] bg-white text-gray-500">
+          <input type="text" placeholder="add todo" name="todo" />
+
+          <div></div>
+        </div>
+      </div>
     </div>
   );
 };
