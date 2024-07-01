@@ -9,7 +9,10 @@ const Navbar = () => {
       <div className="flex-none">
         <ul>
           <li>
-            <Link href={"/auth"}>Auth</Link>
+            <Link href={"/login"}>login</Link>
+          </li>
+          <li>
+            <Link href={"/sign-up"}>sign-up</Link>
           </li>
         </ul>
       </div>

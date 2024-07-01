@@ -1,5 +1,5 @@
 "use client";
-import { account } from "@/appwrite";
+import { account } from "@/utils/appwrite";
 import { OAuthProvider } from "appwrite";
 
 const GithubLogin = () => {

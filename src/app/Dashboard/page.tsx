@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { account } from "@/appwrite";
+import { account } from "@/utils/appwrite";
 import { type Models } from "appwrite";
 const Dashboard = () => {
   const [user, setUser] = useState<Models.User<Models.Preferences> | null>();
